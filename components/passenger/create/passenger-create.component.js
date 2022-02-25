@@ -1,7 +1,6 @@
 import React, { Component, useEffect, useState } from 'react'
 import { useFormik } from 'formik'
 import * as yup from 'yup';
-// import { toast } from 'react-toastify';
 import Link from 'next/link';
 import { useRouter } from "next/router";
 import customAxios from '../../../interceptor/axios-interceptor';
@@ -65,8 +64,6 @@ const PassengerCreate = (props) => {
         customAxios.post('https://api.instantwebtools.net/v1/passenger', data)
             .then(res => {
                 alert("passenger created successfully");
-                // toast.success("passenger registered successfully");
-                // props.history.push('/login');
                 router.push('/passenger/list');
             })
             .catch(err => {
@@ -79,8 +76,6 @@ const PassengerCreate = (props) => {
             .then(res => {
                 alert("passenger update successfully");
                 router.push('/passenger/list');
-                // toast.success("passenger registered successfully");
-                // props.history.push('/login');
             })
             .catch(err => {
                 toast.error(err.response.data);

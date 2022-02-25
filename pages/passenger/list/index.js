@@ -14,9 +14,7 @@ export default function Passenger({ passengers }) {
           alert(res.message);
           getAll();
         })
-        .catch(err => {
-          //    alert(err);
-        })
+        .catch(err => {  })
     }
   }
 
@@ -30,9 +28,7 @@ export default function Passenger({ passengers }) {
       .then(res => {
         setPassengers(res.data);
       })
-      .catch(err => {
-        //    alert(err);
-      })
+      .catch(err => {  })
   }
   return (
     <>
@@ -84,6 +80,6 @@ export async function getStaticProps(context) {
   return {
     props: {
       passengers: data.data
-    }, // will be passed to the page component as props
+    }, 
   }
 }
